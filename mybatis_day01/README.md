@@ -1,2 +1,2 @@
 # MyBatis
-MyBatis学习过程中敲的代码
+MyBatis_day01学习过程中敲的代码
