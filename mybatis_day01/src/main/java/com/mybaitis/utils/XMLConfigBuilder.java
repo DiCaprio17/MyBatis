@@ -190,11 +190,11 @@ public class XMLConfigBuilder {
                 Type type = method.getGenericReturnType();//List<User>
                 //判断type是不是参数化的类型
                 if (type instanceof ParameterizedType) {
-                    //强转
+                    //强转：为了调用ParameterizedType类中的方法
                     ParameterizedType ptype = (ParameterizedType) type;
-                    //得到参数化类型中的实际类型参数
+                    //得到参数化类型中的实际类型参数：User 数组：是因为其支持Map<K,V>，则需要数组取出K泛型和V泛型
                     Type[] types = ptype.getActualTypeArguments();
-                    //取出第一个
+                    //取出第一个 Type强转成Class
                     Class domainClass = (Class) types[0];
                     //获取domainClass的类名
                     String resultType = domainClass.getName();
